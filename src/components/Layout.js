@@ -4,18 +4,25 @@ import Footer from './Footer'
 import "modern-css-reset"
 import "fontsource-noto-sans-jp"
 import "fontsource-tenor-sans"
-import Style from './Layout.module.scss'
+import { createGlobalStyle } from "styled-components"
 
 function Layout({ children }) {
     return (
-        <div>
+        <>
+            <GlobalStyle />
             <Header />
             <div>
             { children }
             </div>
             <Footer />
-        </div>
+        </>
     )
 }
+
+const GlobalStyle = createGlobalStyle`
+    body {
+        font-family: "Noto Sans JP";;
+    }
+`
 
 export default Layout

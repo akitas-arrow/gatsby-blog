@@ -1,28 +1,45 @@
-import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
+import React from 'react'
+import { graphql, useStaticQuery } from 'gatsby'
+import styled from 'styled-components'
 
-export default props => {
-    const { allImageSharp } = useStaticQuery(graphql`
-        query {
-            allImageSharp {
-                nodes {
-                    fluid(maxWidth: 1600) {
-                        originalName
-                        ...GatsbyImageSharpFluid_withWebp
+import BackgroundImage from 'gatsby-background-image'
+
+const BackgroundSection = ({ className }) => {
+    const data = useStaticQuery(
+        graphql`
+            query {
+                desktop: file(relativePath: { eq: "top.jpg" }) {
+                    childImageSharp {
+                        fluid(quality: 90, maxWidth: 1920) {
+                            ...GatsbyImageSharpFluid_withWebp
+                        }
                     }
                 }
             }
-        }
-    `)
-    return (
-        <figure className={props.className} style={props.style}>
-        <Img
-            fluid={
-                allImageSharp.nodes.find(n => n.fluid.originalName === props.filename).fluid
-            }
-            alt={props.alt}
-        />
-        </figure>
+        `
     )
+
+  // Set ImageData.
+    const imageData = data.desktop.childImageSharp.fluid
+
+    return (
+        <BackgroundImage
+            Tag="section"
+            className={className}
+            fluid={imageData}
+            backgroundColor={`#040e18`}
+        />
+    )
+        {/* <h2>gatsby-background-image</h2>
+        </BackgroundImage> */}
+    
 }
+
+const StyledBackgroundSection = styled(BackgroundSection)`
+    width: 100%;
+    height: 640px;
+    background-position: center;
+    background-size: cover;
+`
+
+export default StyledBackgroundSection

@@ -1,13 +1,12 @@
 import React from "react"
-import Kv from "../components/Kv"
 import Layout from "../components/Layout"
+import StyledBackgroundSection from "../components/image"
 // import Image from "../components/image"
 
 export default function Home() {
   return (
   <Layout>
-    <Kv />
-    {/* <Image filename="top.jpg" alt="メイン画像"/> */}
+    <StyledBackgroundSection />
   </Layout>
   )
 }
