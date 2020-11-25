@@ -11,13 +11,14 @@ function HeaderTitle() {
 }
 
 const Title = styled.div`
+    z-index: 3;
     text-decoration: none;
     padding: 0 8px;
     font-size: 24px;
     line-height: 80px;
     font-family: "Tenor Sans";
     color: #51505D;
-    background-color: green;
+    /* background-color: green; */
     @media (min-width: 769px) {
         font-size: 32px;
     }

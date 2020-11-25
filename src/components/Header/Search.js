@@ -9,7 +9,7 @@ function Search() {
             <Container>
                 <FontField type="text" placeholder="Search"/>
                 <SearchButton>
-                    <FontAwesomeIcon icon={faSearch} />
+                    <FontAwesomeIcon icon={faSearch} color='#51505d'/>
                 </SearchButton>
             </Container>
         </FormGroup>

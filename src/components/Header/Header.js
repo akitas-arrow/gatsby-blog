@@ -35,22 +35,23 @@ const Wrapper = styled.div`
     width: 100%;
     padding: 0 16px;
     position: fixed;
-    z-index: 99;
+    z-index: 2;
     display: flex;
     height: 80px;
-    background-color: yellow;
+    /* background-color: yellow; */
     justify-content: space-between;
 `
 
 const Toggle = styled.div`
     display: flex;
     cursor: pointer;
-    background-color: red;
+    z-index: 3;
+    /* background-color: red; */
     padding: 0 8px;
 `
 
 const Hamburger = styled.div`
-    background-color: #111;
+    background-color: #51505d;
     width: 30px;
     height: 2px;
     transition: all .3s linear;
@@ -62,7 +63,7 @@ const Hamburger = styled.div`
     ::after {
         width: 30px;
         height: 2px;
-        background-color: #111;
+        background-color: #51505d;
         content: "";
         position: absolute;
         transition: all 0.3s linear;
@@ -83,13 +84,15 @@ const Hamburger = styled.div`
 
 const NavBox = styled.div`
     width: 100%;
+    height: 100%;
     text-align: center;
     position: fixed;
     background-color: #FFF;
     display: flex;
     flex-direction: column;
     transition: all 0.3s ease-in;
-    top: 80px;
+    top: 0;
+    padding-top: 80px;
     right: ${props => (props.open? "-100%" : "0")};
 `
 
