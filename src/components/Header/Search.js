@@ -6,10 +6,12 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons'
 function Search() {
     return (
         <FormGroup>
-            <FontField type="text" placeholder="Search"/>
-            <SearchButton>
-                <FontAwesomeIcon icon={faSearch} />
-            </SearchButton>
+            <Container>
+                <FontField type="text" placeholder="Search"/>
+                <SearchButton>
+                    <FontAwesomeIcon icon={faSearch} />
+                </SearchButton>
+            </Container>
         </FormGroup>
     )
 }
@@ -17,13 +19,13 @@ function Search() {
 const FormGroup = styled.form`
     /* background-color: blue; */
     display: flex;
+    height: 80px;
 `
 
-const SearchButton = styled.button`
-    border: none;
-    background: transparent;
-    outline: none;
-    cursor: pointer;
+const Container = styled.div`
+    width: 80%;
+    margin: 0 auto;
+    line-height: 80px;
 `
 
 const FontField = styled.input`
@@ -31,6 +33,7 @@ const FontField = styled.input`
     border: 0;
     border-bottom: 1px solid #51505d;
     background: transparent;
+    height: 40px;
     &::placeholder {
         color: #51505d;
     }
@@ -39,7 +42,12 @@ const FontField = styled.input`
         outline: none;
     }
 `
-
+const SearchButton = styled.button`
+    border: none;
+    background: transparent;
+    outline: none;
+    cursor: pointer;
+`
 
 
 

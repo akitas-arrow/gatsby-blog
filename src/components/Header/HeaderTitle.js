@@ -4,29 +4,20 @@ import { Link } from "gatsby"
 
 function HeaderTitle() {
     return (
-        <TitleWrapper>
             <Title as={Link} to="/">
                 My Blog
             </Title>
-        </TitleWrapper>
     )
 }
 
-const TitleWrapper = styled.div`
-    flex: 1;
-    /* background-color: blue; */
-    text-align: center;
-    @media (min-width: 769px) {
-        text-align: left;
-    }
-`
-
 const Title = styled.div`
     text-decoration: none;
+    padding: 0 8px;
     font-size: 24px;
     line-height: 80px;
     font-family: "Tenor Sans";
     color: #51505D;
+    background-color: green;
     @media (min-width: 769px) {
         font-size: 32px;
     }

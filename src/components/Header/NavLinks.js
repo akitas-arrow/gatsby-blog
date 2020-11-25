@@ -9,10 +9,14 @@ function NavLinks() {
 }
 
 const NavItem = styled(Link)`
+    text-align: center;
+    height: 80px;
+    line-height: 80px;
     text-decoration: none;
     font-family: "Tenor Sans";
     font-size: 20px;
     color: #51505D;
+    /* background-color: pink; */
     @media (min-width: 769px) {
         font-size: 24px;
     }
