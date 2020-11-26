@@ -4,7 +4,7 @@ import styled from 'styled-components'
 
 import BackgroundImage from 'gatsby-background-image'
 
-const BackgroundSection = ({ className }) => {
+const TopImage = ({ className }) => {
     const data = useStaticQuery(
         graphql`
             query {
@@ -19,7 +19,6 @@ const BackgroundSection = ({ className }) => {
         `
     )
 
-  // Set ImageData.
     const imageData = data.desktop.childImageSharp.fluid
 
     return (
@@ -28,18 +27,25 @@ const BackgroundSection = ({ className }) => {
             className={className}
             fluid={imageData}
             backgroundColor={`#040e18`}
-        />
+        >
+            <Content></Content>
+        </BackgroundImage>
     )
-        {/* <h2>gatsby-background-image</h2>
-        </BackgroundImage> */}
-    
 }
 
-const StyledBackgroundSection = styled(BackgroundSection)`
+const StyledTopImage = styled(TopImage)`
     width: 100%;
-    height: 640px;
+    height: auto;
     background-position: center;
     background-size: cover;
 `
 
-export default StyledBackgroundSection
+const Content = styled.div`
+    width: 100%;
+    padding-top: 70%;
+    @media (min-width: 769px) {
+        padding-top: 640px;
+    }
+`
+
+export default StyledTopImage

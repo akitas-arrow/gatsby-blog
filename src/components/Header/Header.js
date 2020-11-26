@@ -38,7 +38,6 @@ const Wrapper = styled.div`
     z-index: 2;
     display: flex;
     height: 80px;
-    /* background-color: yellow; */
     justify-content: space-between;
 `
 
@@ -46,8 +45,10 @@ const Toggle = styled.div`
     display: flex;
     cursor: pointer;
     z-index: 3;
-    /* background-color: red; */
     padding: 0 8px;
+    @media (min-width: 769px) {
+        display: none;
+    }
 `
 
 const Hamburger = styled.div`
@@ -80,20 +81,26 @@ const Hamburger = styled.div`
         transform: ${props => (props.open ? "rotate(90deg) " : "rotate(0deg)")};
         top: 10px;
     }
+    
+    @media(min-width: 769px) {
+        display: none;
+    }
 `
 
 const NavBox = styled.div`
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    position: fixed;
-    background-color: #FFF;
-    display: flex;
-    flex-direction: column;
-    transition: all 0.3s ease-in;
-    top: 0;
-    padding-top: 80px;
-    right: ${props => (props.open? "-100%" : "0")};
+        display: flex;
+    @media (max-width: 768px) {
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        position: fixed;
+        background-color: #e9eff4;
+        flex-direction: column;
+        transition: all 0.3s ease-in;
+        top: 0;
+        padding-top: 80px;
+        right: ${props => (props.open? "-100%" : "0")};
+    }
 `
 
 export default Header

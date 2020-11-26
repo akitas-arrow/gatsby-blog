@@ -4,7 +4,7 @@ import styled from 'styled-components'
 
 function NavLinks() {
     return (
-        <NavItem to={"/"}>ABOUT</NavItem>
+        <NavItem to={"/about"}>ABOUT</NavItem>
     )
 }
 
@@ -16,9 +16,9 @@ const NavItem = styled(Link)`
     font-family: "Tenor Sans";
     font-size: 20px;
     color: #51505D;
-    /* background-color: pink; */
     @media (min-width: 769px) {
         font-size: 24px;
+        margin-right: 32px;
     }
 `
 

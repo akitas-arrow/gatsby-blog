@@ -18,7 +18,6 @@ const Title = styled.div`
     line-height: 80px;
     font-family: "Tenor Sans";
     color: #51505D;
-    /* background-color: green; */
     @media (min-width: 769px) {
         font-size: 32px;
     }

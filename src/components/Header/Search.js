@@ -17,23 +17,26 @@ function Search() {
 }
 
 const FormGroup = styled.form`
-    /* background-color: blue; */
-    display: flex;
     height: 80px;
 `
 
 const Container = styled.div`
-    width: 80%;
-    margin: 0 auto;
-    line-height: 80px;
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 24px;
+    @media (min-width: 769px) {
+        padding: 8px;
+    }
 `
 
 const FontField = styled.input`
+    background: transparent;
+    flex: 1;
     font-family: "Tenor Sans";
+    font-size: 20px;
     border: 0;
     border-bottom: 1px solid #51505d;
-    background: transparent;
-    height: 40px;
+    padding: 16px;
     &::placeholder {
         color: #51505d;
     }

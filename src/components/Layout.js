@@ -11,9 +11,7 @@ function Layout({ children }) {
         <>
             <GlobalStyle />
             <Header />
-            <div>
             { children }
-            </div>
             <Footer />
         </>
     )
