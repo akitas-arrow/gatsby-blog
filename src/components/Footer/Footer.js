@@ -4,8 +4,8 @@ import styled from "styled-components"
 
 function Footer() {
     return (
-        <FooterWrapper>
-            <FooterContainer>
+        <Wrapper>
+            <Container>
                 <FooterSection>
                     <Title>
                         TAGS
@@ -16,35 +16,57 @@ function Footer() {
                     <Title>
                         CONTACT
                     </Title>
-                    <p>お仕事のご相談はこちらのアドレスへお問い合わせ下さい。</p>
-                    <p>hogehogehoge@hoge.com</p>
+                    <Text>お仕事のご相談はこちらのアドレスへお問い合わせ下さい。</Text>
+                    <Text>hogehogehoge@hoge.com</Text>
                 </FooterSection>
-            </FooterContainer>
-        </FooterWrapper>
+            </Container>
+        </Wrapper>
     )
 }
-const FooterWrapper = styled.footer`
+const Wrapper = styled.footer`
     background-color: #CED4BE;
-    width: 100%;
-    padding: 80px 0;
+    height: auto;
+    padding: 80px 24px;
+    @media (min-width: 769px) {
+        padding: 80px 90px;
+    }
 `
-const FooterContainer = styled.div`
-    background-color: #CED4BE;
-    max-width: 1100px;
-    display: flex;
-    margin: 0 auto;
-    `
+const Container = styled.div`
+    width: 100%;
+    @media (min-width: 769px) {
+        display: flex;
+        justify-content: space-between;
+        margin: 0 auto;
+        max-width: 1100px;
+    }
+`
 
 const FooterSection = styled.div`
-    flex: 1;
-    &:first-child {
-        padding-right: 40px;
+    color: #333333;
+    width: 100%;
+    :first-child {
+        margin-bottom: 80px;
+    }
+    @media (min-width: 769px) {
+        width: calc((100% - 40px) / 2);
+        :first-child {
+            margin-bottom: 0;
+        }
     }
 `
 
 const Title = styled.h3`
-    font-size: 22px;
-    font-family: "Tenor Sans";
+    color: #51505d;
+    font-size: 20px;
     font-weight: normal;
+    font-family: "Tenor Sans";
+    margin-bottom: 16px;
+    @media (min-width: 769px) {
+        font-size: 24px;
+    }
+`
+
+const Text = styled.p`
+    font-size: 16px;
 `
 export default Footer
