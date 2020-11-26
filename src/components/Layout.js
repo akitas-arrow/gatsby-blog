@@ -19,7 +19,9 @@ function Layout({ children }) {
 
 const GlobalStyle = createGlobalStyle`
     body {
-        font-family: "Noto Sans JP";;
+        font-family: "Noto Sans JP";
+        line-height: 2em;
+        letter-spacing: 0.05em;
     }
 `
 

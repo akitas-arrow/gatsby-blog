@@ -11,7 +11,7 @@ const Tag = ({ children }) => {
 
 const TagButton = styled.div`
     background-color: #51505D;
-    padding: 4px 8px;
+    padding: 0 8px;
     color: #FFFFFF;
     font-size: 14px;
     display: inline-block;
