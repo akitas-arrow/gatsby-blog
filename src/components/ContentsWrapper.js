@@ -17,12 +17,12 @@ const Wrapper = styled.div`
     height: auto;
     padding: 80px 24px;
     @media (min-width: 769px) {
-        padding: 80px 90px;
+        padding: 88px 90px;
     }
 `
 
 const Container = styled.div`
-background-color: pink;
+/* background-color: pink; */
     width: 100%;
     @media (min-width: 769px) {
         margin: 0 auto;

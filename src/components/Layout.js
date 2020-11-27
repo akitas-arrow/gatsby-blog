@@ -22,6 +22,7 @@ const GlobalStyle = createGlobalStyle`
         font-family: "Noto Sans JP";
         line-height: 2em;
         letter-spacing: 0.05em;
+        color: #333333;
     }
 `
 
