@@ -10,7 +10,7 @@ const Thumbnail = ({ className }) => {
             query {
                 desktop: file(relativePath: { eq: "top.jpg" }) {
                     childImageSharp {
-                        fluid(quality: 90, maxWidth: 1920) {
+                        fluid(quality: 90, maxWidth: 530) {
                             ...GatsbyImageSharpFluid_withWebp
                         }
                     }

@@ -4,18 +4,17 @@ import StyledThumbnail from "./Thumbnail"
 import styled from 'styled-components'
 import Tag from "./Tag"
 
-function BlogItem() {
+function BlogItem({ title, date, src, tag}) {
     return (
         <Container as={Link} to={''}>
             <StyledThumbnail />
             <TextBlock>
                 <TextBlockTop>
-                    <Title>タイトルが入りますタイトルが入ります</Title>
-                    <Date>2020/11/26</Date>
+                    <Title>{ title }</Title>
+                    <Date>{ date }</Date>
                 </TextBlockTop>
                 <TextBlockBottom>
-                    <Tag>タグの名前1</Tag>
-                    <Tag>タグの名前2</Tag>
+                    <Tag>{ tag }</Tag>
                 </TextBlockBottom>
             </TextBlock>
         </Container>
@@ -24,6 +23,7 @@ function BlogItem() {
 
 
 const Container = styled.div`
+    display: block;
     text-decoration: none;
     margin-bottom: 80px;
     :last-child {

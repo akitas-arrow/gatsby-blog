@@ -4,7 +4,7 @@ import { Link } from 'gatsby'
 
 const Tag = ({ children }) => {
     return (
-        <TagButton to={''}>
+        <TagButton to={'/'}>
             { children }
         </TagButton>
     )
