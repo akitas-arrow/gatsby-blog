@@ -12,12 +12,19 @@ const Home = () => {
       allMarkdownRemark {
         edges {
           node {
+            fields {
+              slug
+            }
             frontmatter {
               title
               date
               tag
               thumbnail {
-                name
+                childImageSharp {
+                  fluid(maxWidth: 530) {
+                    ...GatsbyImageSharpFluid
+                  }
+                }
               }
             }
           }
@@ -30,9 +37,20 @@ const Home = () => {
     <Layout>
       <StyledTopImage />
       <ContentsWrapper>
-        <BlogItem />
-        <BlogItem />
-        <BlogItem />
+        {
+          data.allMarkdownRemark.edges.map((edge, index) => {
+            return (
+              <BlogItem
+                key={index}
+                title={edge.node.frontmatter.title}
+                date={edge.node.frontmatter.date}
+                tag={edge.node.frontmatter.tag}
+                fluid={edge.node.frontmatter.thumbnail.childImageSharp.fluid}
+                link={`${edge.node.fields.slug}`}
+              />
+            )
+          })
+        }
       </ContentsWrapper>
     </Layout>
   )

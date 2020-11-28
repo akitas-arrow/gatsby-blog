@@ -1,15 +1,18 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import StyledThumbnail from "./Thumbnail"
+import Thumbnail from "./Thumbnail"
 import styled from 'styled-components'
 import Tag from "./Tag"
 
-function BlogItem({ title, date, src, tag}) {
+function BlogItem({ title, date, fluid, tag, link}) {
     return (
-        <Container as={Link} to={''}>
-            <StyledThumbnail />
+        <Container>
+            {/* <Thumbnail fluid={fluid}/> */}
+            <ImageContainer>
+                <Thumbnail fluid={fluid}/>
+            </ImageContainer>
             <TextBlock>
-                <TextBlockTop>
+                <TextBlockTop as={Link} to={`/${link}`}>
                     <Title>{ title }</Title>
                     <Date>{ date }</Date>
                 </TextBlockTop>
@@ -23,14 +26,9 @@ function BlogItem({ title, date, src, tag}) {
 
 
 const Container = styled.div`
-    display: block;
-    text-decoration: none;
     margin-bottom: 80px;
     :last-child {
         margin: 0;
-    }
-    :hover {
-        opacity: 0.7;
     }
     @media (min-width: 769px) {
         margin-bottom: 88px;
@@ -39,6 +37,13 @@ const Container = styled.div`
         :last-child {
             margin: 0;
         }
+    }
+`
+
+const ImageContainer = styled.div`
+    width: 100%;
+    @media (min-width: 769px) {
+        width: calc((100% - 40px) * 0.4);
     }
 `
 
@@ -52,9 +57,14 @@ const TextBlock = styled.div`
 `
 
 const TextBlockTop = styled.div`
+    display: block;
+    text-decoration: none;
     padding: 24px 0;
     @media (min-width: 769px) {
         padding: 0;
+    }
+    :hover {
+        opacity: 0.7;
     }
 `
 
