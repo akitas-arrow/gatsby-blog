@@ -8,8 +8,12 @@ function About() {
         <Layout>
             <ContentsWrapper>
                 <Heading>
-                    <TitleBlock>about</TitleBlock>
-                    <ImageBlock>gazou</ImageBlock>
+                    <TitleBlock>
+                            <Title>
+                                ABOUT
+                            </Title>
+                        </TitleBlock>
+                    <ImageBlock></ImageBlock>
                 </Heading>
                 <TextBlock>
                     <NameBlock>
@@ -28,35 +32,56 @@ function About() {
 
 const Heading = styled.div`
     width: 100%;
-    padding-top : 80px;
+    padding: 24px 0;
     @media (min-width: 769px) {
         display: flex;
         justify-content: space-between;
+        padding : 80px 0;
     }
 `
 
 const TitleBlock = styled.div`
-    background-color: pink;
+    position: relative;
+    /* background-color: pink; */
     width: 100%;
+    height: 160px;
+    margin-bottom: 24px;
     @media (min-width: 769px) {
         width: calc((100% - 40px) / 2);
+        height: auto;
+        padding-top: 35%;
+        margin: 0;
+    }
+`
+const Title = styled.h3`
+    font-family: "Tenor Sans";
+    font-size: 24px;
+    font-weight: normal;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    @media (min-width: 769px) {
+        font-size: 32px;
     }
 `
 
 const ImageBlock = styled.div`
     background-color: white;
     width: 100%;
+    padding-top: 75%;
     @media (min-width: 769px) {
         width: calc((100% - 40px) / 2);
+        padding-top: 35%;
     }
 `
 
 const TextBlock = styled.div`
-
 `
 
 const NameBlock = styled.div`
     display: flex;
+    font-size: 18px;
 `
 
 const JapaneseName = styled.p`
@@ -68,6 +93,7 @@ const AlphabetName = styled.p`
 `
 
 const Profile = styled.div`
-
+    margin-top: 24px;
+    font-size: 16px;
 `
 export default About
