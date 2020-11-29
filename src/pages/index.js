@@ -46,7 +46,7 @@ const Home = () => {
                 date={edge.node.frontmatter.date}
                 tag={edge.node.frontmatter.tag}
                 fluid={edge.node.frontmatter.thumbnail.childImageSharp.fluid}
-                link={`${edge.node.fields.slug}`}
+                link={`blog/${edge.node.fields.slug}`}
               />
             )
           })

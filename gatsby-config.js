@@ -28,6 +28,9 @@ module.exports = {
       options: {
         plugins: [
           {
+            resolve: "gatsby-remark-component",
+          },
+          {
             resolve: `gatsby-remark-relative-images-v2`,
           },
           {
