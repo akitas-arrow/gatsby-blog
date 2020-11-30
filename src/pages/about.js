@@ -77,6 +77,12 @@ const ImageBlock = styled.div`
 `
 
 const TextBlock = styled.div`
+    /* background-color:orange; */
+    width: 100%;
+    @media (min-width: 769px) {
+        margin: 0 auto;
+        max-width: 800px;
+    }
 `
 
 const NameBlock = styled.div`

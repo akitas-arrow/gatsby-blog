@@ -3,7 +3,10 @@ import { graphql } from 'gatsby'
 import styled from 'styled-components'
 import Layout from '../components/Layout'
 import ContentsWrapper from '../components/ContentsWrapper'
-import { renderRichText } from "gatsby-source-contentful/rich-text"
+import { BLOCKS } from "@contentful/rich-text-types"
+// import { renderRichText } from "gatsby-source-contentful/rich-text"
+// import Img from 'gatsby-image'
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 
 export const query = graphql`
     query($slug: String!) {
@@ -16,13 +19,28 @@ export const query = graphql`
                 }
             }
             body {
-                raw
+                json
             }
         }
     }
 `
 
 function BlogDetail(props) {
+    const options = {
+        renderText: text => {
+            return text.split('\n').reduce((children, textSegment, index) => {
+                return [...children, index > 0 && <br key={index} />, textSegment];
+            }, []);
+        },
+        renderNode: {
+            [BLOCKS.EMBEDDED_ASSET]: (node) => (
+                <img
+                    src={node.data.target.fields.file["en-US"].url}
+                />
+            )
+        },
+    };
+
     return (
         <Layout>
             <ContentsWrapper>
@@ -37,7 +55,7 @@ function BlogDetail(props) {
                     </ImageBlock>
                 </Heading>
                 <TextBlock>
-                    {renderRichText(props.data.contentfulBlogPost.body, {})}
+                    {documentToReactComponents(props.data.contentfulBlogPost.body.json, options)}
                 </TextBlock>
             </ContentsWrapper>
         </Layout>
@@ -82,6 +100,10 @@ const Title = styled.h4`
 
 const Date = styled.p`
     font-size: 16px;
+    padding-top: 16px;
+    @media (min-width: 769px) {
+        padding-top: 24px;
+    }
 `
 
 const ImageBlock = styled.div`
@@ -96,7 +118,11 @@ const ImageBlock = styled.div`
 
 const TextBlock = styled.div`
     /* background-color:orange; */
-    height: auto;
+    width: 100%;
+    @media (min-width: 769px) {
+        margin: 0 auto;
+        max-width: 800px;
+    }
 `
 
 
