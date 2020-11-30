@@ -14,8 +14,8 @@ export const query = graphql`
             title
             createdDate(formatString: "YYYY/MM/DD")
             thumbnail {
-                fluid {
-                    src
+                file {
+                    url
                 }
             }
             body {
@@ -52,6 +52,7 @@ function BlogDetail(props) {
                         </Container>
                     </TitleBlock>
                     <ImageBlock>
+                        <img src={`${props.data.contentfulBlogPost.thumbnail.file.url}`}/>
                     </ImageBlock>
                 </Heading>
                 <TextBlock>
