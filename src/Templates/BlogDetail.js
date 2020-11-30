@@ -3,22 +3,21 @@ import { graphql } from 'gatsby'
 import styled from 'styled-components'
 import Layout from '../components/Layout'
 import ContentsWrapper from '../components/ContentsWrapper'
+import { renderRichText } from "gatsby-source-contentful/rich-text"
 
 export const query = graphql`
-    query(
-        $slug: String!
-    ) {
-        markdownRemark (
-        fields: {
-            slug : {
-            eq: $slug
-            }
-        }
-        ) {
-        frontmatter {
+    query($slug: String!) {
+        contentfulBlogPost(slug: {eq: $slug}){
             title
-            date
-        }
+            createdDate(formatString: "YYYY/MM/DD")
+            thumbnail {
+                fluid {
+                    src
+                }
+            }
+            body {
+                raw
+            }
         }
     }
 `
@@ -30,19 +29,16 @@ function BlogDetail(props) {
                 <Heading>
                     <TitleBlock>
                         <Container>
-                            <Title>{props.data.markdownRemark.frontmatter.title}</Title>
-                            <Date>{props.data.markdownRemark.frontmatter.date}</Date>
+                            <Title>{props.data.contentfulBlogPost.title}</Title>
+                            <Date>{props.data.contentfulBlogPost.createdDate}</Date>
                         </Container>
                     </TitleBlock>
                     <ImageBlock>
                     </ImageBlock>
                 </Heading>
                 <TextBlock>
-                    <div dangerouslySetInnerHTML={{ __html: props.data.markdownRemark.html }}/>
+                    {renderRichText(props.data.contentfulBlogPost.body, {})}
                 </TextBlock>
-                {/* <TextBlock>
-                    hogehoge
-                </TextBlock> */}
             </ContentsWrapper>
         </Layout>
     )
@@ -99,7 +95,7 @@ const ImageBlock = styled.div`
 `
 
 const TextBlock = styled.div`
-    background-color:orange;
+    /* background-color:orange; */
     height: auto;
 `
 

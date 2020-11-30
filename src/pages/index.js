@@ -9,22 +9,19 @@ const Home = () => {
 
   const data = useStaticQuery(graphql`
     query {
-      allMarkdownRemark {
+      allContentfulBlogPost(sort:{
+        fields: createdDate,
+        order: DESC
+      } ){
         edges {
           node {
-            fields {
-              slug
-            }
-            frontmatter {
-              title
-              date
-              tag
-              thumbnail {
-                childImageSharp {
-                  fluid(maxWidth: 530) {
-                    ...GatsbyImageSharpFluid
-                  }
-                }
+            title
+            slug
+            createdDate(formatString: "YYYY/MM/DD")
+            tag
+            thumbnail {
+              fluid {
+                src
               }
             }
           }
@@ -38,15 +35,15 @@ const Home = () => {
       <StyledTopImage />
       <ContentsWrapper>
         {
-          data.allMarkdownRemark.edges.map((edge, index) => {
+          data.allContentfulBlogPost.edges.map((edge, index) => {
             return (
               <BlogItem
                 key={index}
-                title={edge.node.frontmatter.title}
-                date={edge.node.frontmatter.date}
-                tag={edge.node.frontmatter.tag}
-                fluid={edge.node.frontmatter.thumbnail.childImageSharp.fluid}
-                link={`blog/${edge.node.fields.slug}`}
+                title={edge.node.title}
+                date={edge.node.createdDate}
+                tag={edge.node.tag}
+                fluid={edge.node.thumbnail.fluid}
+                link={`blog/${edge.node.slug}`}
               />
             )
           })
