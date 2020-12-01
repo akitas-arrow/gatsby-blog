@@ -1,17 +1,15 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import Thumbnail from "./Thumbnail"
 import styled from 'styled-components'
 import Tag from "./Tag"
 
 function BlogItem({ title, date, url, tag, link, alt}) {
     return (
         <Container>
-            {/* <Thumbnail fluid={fluid}/> */}
             <ImageContainer>
-                {/* <Thumbnail fluid={fluid}/> */}
                 <img 
                     src={`${url}?fm=webp&fit=fill&w=768&h=576`}
+                    alt={alt}
                 />
             </ImageContainer>
             <TextBlock>
@@ -20,7 +18,7 @@ function BlogItem({ title, date, url, tag, link, alt}) {
                     <Date>{ date }</Date>
                 </TextBlockTop>
                 <TextBlockBottom>
-                    <Tag>{ tag }</Tag>
+                    {/* <Tag>{ tag }</Tag> */}
                 </TextBlockBottom>
             </TextBlock>
         </Container>

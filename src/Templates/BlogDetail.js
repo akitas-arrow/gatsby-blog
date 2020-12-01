@@ -4,8 +4,6 @@ import styled from 'styled-components'
 import Layout from '../components/Layout'
 import ContentsWrapper from '../components/ContentsWrapper'
 import { BLOCKS } from "@contentful/rich-text-types"
-// import { renderRichText } from "gatsby-source-contentful/rich-text"
-// import Img from 'gatsby-image'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 
 export const query = graphql`
@@ -86,8 +84,6 @@ const TitleBlock = styled.div`
     @media (min-width: 769px) {
         width: calc((100% - 40px) / 2);
         height: auto;
-        /* padding-top: 35%; */
-        /* padding-top: 37.5%; */
         margin: 0;
     }
 `
@@ -115,10 +111,8 @@ const Date = styled.p`
 const ImageBlock = styled.div`
     background-color: white;
     width: 100%;
-    /* padding-top: 75%; */
     @media (min-width: 769px) {
         width: calc((100% - 40px) / 2);
-        /* padding-top: 35%; */
     }
 `
 

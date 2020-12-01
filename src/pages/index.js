@@ -18,7 +18,6 @@ const Home = () => {
             title
             slug
             createdDate(formatString: "YYYY/MM/DD")
-            tag
             thumbnail {
               title
               file {
@@ -42,7 +41,7 @@ const Home = () => {
                 key={index}
                 title={edge.node.title}
                 date={edge.node.createdDate}
-                tag={edge.node.tag}
+                // tag={edge.node.tag}
                 url={edge.node.thumbnail.file.url}
                 alt={edge.node.thumbnail.title}
                 link={`blog/${edge.node.slug}`}
