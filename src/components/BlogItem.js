@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 import styled from 'styled-components'
 import Tag from "./Tag"
 
-function BlogItem({ title, date, url, tag, link, alt}) {
+function BlogItem({ title, date, url, tags, link, alt}) {
     return (
         <Container>
             <ImageContainer>
@@ -18,7 +18,17 @@ function BlogItem({ title, date, url, tag, link, alt}) {
                     <Date>{ date }</Date>
                 </TextBlockTop>
                 <TextBlockBottom>
-                    {/* <Tag>{ tag }</Tag> */}
+                    {
+                        tags && tags.map((tag, index) => {
+                            return (
+                                <Tag
+                                    key={index}
+                                    name={tag.name}
+                                    link={`tags/${tag.slug}`}
+                                />
+                            )
+                        })
+                    }
                 </TextBlockBottom>
             </TextBlock>
         </Container>

@@ -1,8 +1,22 @@
 import React from 'react'
+import { graphql, useStaticQuery} from 'gatsby'
 import Tag from '../Tag'
 import styled from "styled-components"
 
 function Footer() {
+    const data = useStaticQuery(graphql`
+        query {
+            allContentfulTag {
+                edges {
+                    node {
+                        name
+                        slug
+                    }
+                }
+            }
+        }
+    `)
+
     return (
         <Wrapper>
             <Container>
@@ -10,7 +24,15 @@ function Footer() {
                     <Title>
                         TAGS
                     </Title>
-                    <Tag>タグの名前1</Tag>
+                    {data.allContentfulTag.edges && data.allContentfulTag.edges.map((edge, index) => {
+                        return (
+                            <Tag
+                                key={index}
+                                name={edge.node.name}
+                                link={`tags/${edge.node.slug}`}
+                            />
+                        )
+                    }) }
                 </FooterSection>
                 <FooterSection>
                     <Title>

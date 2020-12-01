@@ -24,11 +24,16 @@ const Home = () => {
                 url
               }
             }
+            tags {
+              name
+              slug
+            }
           }
         }
       }
     }
   `)
+
   console.log(data);
   return (
     <Layout>
@@ -41,7 +46,7 @@ const Home = () => {
                 key={index}
                 title={edge.node.title}
                 date={edge.node.createdDate}
-                // tag={edge.node.tag}
+                tags={edge.node.tags}
                 url={edge.node.thumbnail.file.url}
                 alt={edge.node.thumbnail.title}
                 link={`blog/${edge.node.slug}`}

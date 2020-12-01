@@ -2,10 +2,10 @@ import React from 'react'
 import styled from "styled-components"
 import { Link } from 'gatsby'
 
-const Tag = ({ children }) => {
+const Tag = ({ name, link }) => {
     return (
-        <TagButton to='/'>
-            { children }
+        <TagButton to={`/${link}`}>
+            { name }
         </TagButton>
     )
 }
