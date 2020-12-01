@@ -4,12 +4,15 @@ import Thumbnail from "./Thumbnail"
 import styled from 'styled-components'
 import Tag from "./Tag"
 
-function BlogItem({ title, date, fluid, tag, link}) {
+function BlogItem({ title, date, url, tag, link, alt}) {
     return (
         <Container>
             {/* <Thumbnail fluid={fluid}/> */}
             <ImageContainer>
-                <Thumbnail fluid={fluid}/>
+                {/* <Thumbnail fluid={fluid}/> */}
+                <img 
+                    src={`${url}?fm=webp&fit=fill&w=768&h=576`}
+                />
             </ImageContainer>
             <TextBlock>
                 <TextBlockTop as={Link} to={`/${link}`}>

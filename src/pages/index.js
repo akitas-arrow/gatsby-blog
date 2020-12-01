@@ -20,8 +20,9 @@ const Home = () => {
             createdDate(formatString: "YYYY/MM/DD")
             tag
             thumbnail {
-              fluid {
-                src
+              title
+              file {
+                url
               }
             }
           }
@@ -42,7 +43,8 @@ const Home = () => {
                 title={edge.node.title}
                 date={edge.node.createdDate}
                 tag={edge.node.tag}
-                fluid={edge.node.thumbnail.fluid}
+                url={edge.node.thumbnail.file.url}
+                alt={edge.node.thumbnail.title}
                 link={`blog/${edge.node.slug}`}
               />
             )

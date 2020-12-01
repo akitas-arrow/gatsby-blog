@@ -14,6 +14,7 @@ export const query = graphql`
             title
             createdDate(formatString: "YYYY/MM/DD")
             thumbnail {
+                title
                 file {
                     url
                 }
@@ -35,7 +36,7 @@ function BlogDetail(props) {
         renderNode: {
             [BLOCKS.EMBEDDED_ASSET]: (node) => (
                 <img
-                    src={node.data.target.fields.file["en-US"].url}
+                    src={`${node.data.target.fields.file["en-US"].url}?fm=webp&fit=fill&w=1100&h=825`}
                 />
             )
         },
@@ -52,7 +53,10 @@ function BlogDetail(props) {
                         </Container>
                     </TitleBlock>
                     <ImageBlock>
-                        <img src={`${props.data.contentfulBlogPost.thumbnail.file.url}`}/>
+                        <img 
+                            src={`${props.data.contentfulBlogPost.thumbnail.file.url}?fm=webp&fit=fill&w=1100&h=825`}
+                            alt={props.data.contentfulBlogPost.thumbnail.title}
+                        />
                     </ImageBlock>
                 </Heading>
                 <TextBlock>
@@ -82,7 +86,8 @@ const TitleBlock = styled.div`
     @media (min-width: 769px) {
         width: calc((100% - 40px) / 2);
         height: auto;
-        padding-top: 35%;
+        /* padding-top: 35%; */
+        /* padding-top: 37.5%; */
         margin: 0;
     }
 `
@@ -110,10 +115,10 @@ const Date = styled.p`
 const ImageBlock = styled.div`
     background-color: white;
     width: 100%;
-    padding-top: 75%;
+    /* padding-top: 75%; */
     @media (min-width: 769px) {
         width: calc((100% - 40px) / 2);
-        padding-top: 35%;
+        /* padding-top: 35%; */
     }
 `
 
