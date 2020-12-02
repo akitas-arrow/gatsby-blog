@@ -56,8 +56,7 @@ function blog({ data, pageContext }) {
                     })
                 }
                 <PageNation
-                    previousPagePath={pageContext.previousPagePath}
-                    nextPagePath={pageContext.nextPagePath}
+                    pageContext={pageContext}
                 />
             </ContentsWrapper>
         </Layout>
