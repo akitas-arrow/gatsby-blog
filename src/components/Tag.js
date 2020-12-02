@@ -19,6 +19,7 @@ const TagButton = styled(Link)`
     display: inline-block;
     border-radius: 4px;
     margin-right: 16px;
+    margin-bottom: 16px;
     :hover {
         opacity: 0.7;
     }
