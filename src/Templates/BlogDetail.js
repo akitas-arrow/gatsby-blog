@@ -24,7 +24,7 @@ export const query = graphql`
     }
 `
 
-function BlogDetail(props) {
+function BlogDetail({ data }) {
     const options = {
         renderText: text => {
             return text.split('\n').reduce((children, textSegment, index) => {
@@ -46,19 +46,19 @@ function BlogDetail(props) {
                 <Heading>
                     <TitleBlock>
                         <Container>
-                            <Title>{props.data.contentfulBlogPost.title}</Title>
-                            <Date>{props.data.contentfulBlogPost.createdDate}</Date>
+                            <Title>{data.contentfulBlogPost.title}</Title>
+                            <Date>{data.contentfulBlogPost.createdDate}</Date>
                         </Container>
                     </TitleBlock>
                     <ImageBlock>
                         <img 
-                            src={`${props.data.contentfulBlogPost.thumbnail.file.url}?fm=webp&fit=fill&w=1100&h=825`}
-                            alt={props.data.contentfulBlogPost.thumbnail.title}
+                            src={`${data.contentfulBlogPost.thumbnail.file.url}?fm=webp&fit=fill&w=1100&h=825`}
+                            alt={data.contentfulBlogPost.thumbnail.title}
                         />
                     </ImageBlock>
                 </Heading>
                 <TextBlock>
-                    {documentToReactComponents(props.data.contentfulBlogPost.body.json, options)}
+                    {documentToReactComponents(data.contentfulBlogPost.body.json, options)}
                 </TextBlock>
             </ContentsWrapper>
         </Layout>

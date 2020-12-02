@@ -9,10 +9,13 @@ const Home = () => {
 
   const data = useStaticQuery(graphql`
     query {
-      allContentfulBlogPost(sort:{
-        fields: createdDate,
-        order: DESC
-      } ){
+      allContentfulBlogPost(
+        sort:{
+          fields: createdDate,
+          order: DESC
+        },
+        limit: 2
+      ){
         edges {
           node {
             title
@@ -34,7 +37,6 @@ const Home = () => {
     }
   `)
 
-  console.log(data);
   return (
     <Layout>
       <StyledTopImage />

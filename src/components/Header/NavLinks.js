@@ -4,7 +4,10 @@ import styled from 'styled-components'
 
 function NavLinks() {
     return (
-        <NavItem to={"/about"}>ABOUT</NavItem>
+        <>
+            <NavItem to={"/blog"}>BLOG</NavItem>
+            <NavItem to={"/about"}>ABOUT</NavItem>
+        </>
     )
 }
 
