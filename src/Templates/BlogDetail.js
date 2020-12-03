@@ -35,6 +35,7 @@ function BlogDetail({ data }) {
             [BLOCKS.EMBEDDED_ASSET]: (node) => (
                 <img
                     src={`${node.data.target.fields.file["en-US"].url}?fm=webp&fit=fill&w=1100&h=825`}
+                    alt={node.data.target.fields.title["en-US"]}
                 />
             )
         },
@@ -77,7 +78,6 @@ const Heading = styled.div`
 
 const TitleBlock = styled.div`
     position: relative;
-    /* background-color: pink; */
     width: 100%;
     height: 160px;
     margin-bottom: 24px;
@@ -101,6 +101,7 @@ const Title = styled.h4`
 `
 
 const Date = styled.p`
+    color: #777777;
     font-size: 16px;
     padding-top: 16px;
     @media (min-width: 769px) {
@@ -117,7 +118,6 @@ const ImageBlock = styled.div`
 `
 
 const TextBlock = styled.div`
-    /* background-color:orange; */
     width: 100%;
     @media (min-width: 769px) {
         margin: 0 auto;
