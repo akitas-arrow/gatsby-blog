@@ -1,5 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import { Link } from 'gatsby'
 import styled from 'styled-components'
 import Layout from '../components/Layout'
 import ContentsWrapper from '../components/ContentsWrapper'
@@ -61,6 +62,11 @@ function BlogDetail({ data }) {
                 <TextBlock>
                     {documentToReactComponents(data.contentfulBlogPost.body.json, options)}
                 </TextBlock>
+                <LinkButtonContainer>
+                    <LinkButton to={"/blog"}>
+                        一覧に戻る
+                    </LinkButton>
+                </LinkButtonContainer>
             </ContentsWrapper>
         </Layout>
     )
@@ -124,6 +130,18 @@ const TextBlock = styled.div`
         max-width: 800px;
     }
 `
+const LinkButtonContainer = styled.div`
+    display: flex;
+    justify-content: center;
+    padding-top: 24px;
+    @media (min-width: 769px) {
+        padding-top: 80px;
+    }
+`
 
+const LinkButton = styled(Link)`
+    text-decoration: none;
+    color: #51505d;
+`
 
 export default BlogDetail
