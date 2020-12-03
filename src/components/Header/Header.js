@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import styled from "styled-components"
 import HeaderTitle from './HeaderTitle'
 import NavLinks from './NavLinks'
-import Search from './Search'
+// import Search from './Search'
 
 function Header() {
     const [ isOpen, setIsOpen ] = useState(false) 
@@ -18,12 +18,12 @@ function Header() {
                 isOpen?(
                     <NavBox>
                         <NavLinks/>
-                        <Search />
+                        {/* <Search /> */}
                     </NavBox>
                 ) : (
                     <NavBox open>
                         <NavLinks/>
-                        <Search />
+                        {/* <Search /> */}
                     </NavBox>
                 )
             }
