@@ -54,8 +54,8 @@ module.exports.createPages = async ({ graphql, actions }) => {
     paginate({
         createPage, // The Gatsby `createPage` function
         items: res.data.allContentfulBlogPost.edges, // An array of objects
-        itemsPerPage: 1, // How many items you want per page
-        // itemsPerPage: 10, // How many items you want per page
+        // itemsPerPage: 1, // How many items you want per page
+        itemsPerPage: 10, // How many items you want per page
         pathPrefix: ({ pageNumber }) => (pageNumber === 0 ? "/blog" : "/blog/page"),
         // pathPrefix: '/blog', // Creates pages like `/blog`, `/blog/2`, etc
         component: blogsTemplate, // Just like `createPage()`

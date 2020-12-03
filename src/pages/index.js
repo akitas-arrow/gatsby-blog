@@ -14,7 +14,7 @@ const Home = () => {
           fields: createdDate,
           order: DESC
         },
-        limit: 2
+        limit: 4
       ){
         edges {
           node {
