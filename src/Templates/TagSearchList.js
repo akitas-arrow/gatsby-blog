@@ -62,7 +62,7 @@ function TagSearchList ({ data }) {
                                 date={edge.node.createdDate}
                                 url={edge.node.thumbnail.file.url}
                                 tags={edge.node.tags}
-                                link={edge.node.slug}
+                                link={`blog/${edge.node.slug}`}
                                 alt={edge.node.thumbnail.title}
                             />
                         )

@@ -1,5 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import styled from 'styled-components'
 import Layout from "../components/Layout"
 import ContentsWrapper from "../components/ContentsWrapper"
 import BlogItem from "../components/BlogItem"
@@ -40,6 +41,11 @@ function blog({ data, pageContext }) {
     return (
         <Layout>
             <ContentsWrapper>
+                <Heading>
+                    <Title>
+                        BLOG
+                    </Title>
+                </Heading>
                 {
                     data.allContentfulBlogPost.edges.map((edge, index) => {
                         return (
@@ -62,6 +68,26 @@ function blog({ data, pageContext }) {
         </Layout>
     )
 }
+
+const Heading = styled.div`
+    position: relative;
+    height: 160px;
+    @media (min-width: 769px) {
+        height: 308px;
+    }
+`
+const Title = styled.h3`
+    font-family: "Tenor Sans";
+    font-size: 24px;
+    font-weight: normal;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    @media (min-width: 769px) {
+        font-size: 32px;
+    }
+`
 
 
 export default blog
