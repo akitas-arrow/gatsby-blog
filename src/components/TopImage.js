@@ -48,10 +48,13 @@ const TopImage = ({ className }) => {
 const StyledTopImage = styled(TopImage)`
     width: 100%;
     background-repeat: no-repeat;
-    background-position: bottom center;
+    background-position: center;
     background-size: cover;
-    background-attachment: fixed;
-    min-height: 75vh;
+    /* background-attachment: fixed; */
+    min-height: 35vh;
+    @media (min-width: 769px) {
+        min-height: 75vh;
+    }
 `
 
 export default StyledTopImage
