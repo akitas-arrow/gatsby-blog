@@ -5,12 +5,19 @@ import styled from 'styled-components'
 import BackgroundImage from 'gatsby-background-image'
 
 const TopImage = ({ className }) => {
-    const data = useStaticQuery(
+    const { mobileImage, desktopImage } = useStaticQuery(
         graphql`
             query {
-                desktop: file(relativePath: { eq: "top.jpg" }) {
+                mobileImage: file(relativePath: { eq: "top.jpg" }) {
                     childImageSharp {
-                        fluid(quality: 90, maxWidth: 1920) {
+                        fluid(maxWidth: 490, quality: 100) {
+                            ...GatsbyImageSharpFluid_withWebp
+                        }
+                    }
+                }
+                desktopImage: file(relativePath: { eq: "top.jpg" }) {
+                    childImageSharp {
+                        fluid(quality: 100, maxWidth: 4160) {
                             ...GatsbyImageSharpFluid_withWebp
                         }
                     }
@@ -19,35 +26,32 @@ const TopImage = ({ className }) => {
         `
     )
 
-    const imageData = data.desktop.childImageSharp.fluid
+    const sources = [
+        mobileImage.childImageSharp.fluid,
+        {
+            ...desktopImage.childImageSharp.fluid,
+            media: `(min-width: 491px)`,
+        },
+    ]
 
     return (
         <BackgroundImage
             Tag="section"
             className={className}
-            fluid={imageData}
+            fluid={sources}
             backgroundColor={`#040e18`}
         >
-            {/* <Content></Content> */}
         </BackgroundImage>
     )
 }
 
 const StyledTopImage = styled(TopImage)`
     width: 100%;
-    /* height: auto; */
     background-repeat: no-repeat;
     background-position: bottom center;
     background-size: cover;
     background-attachment: fixed;
+    min-height: 75vh;
 `
-
-// const Content = styled.div`
-//     width: 100%;
-//     padding-top: 70%;
-//     @media (min-width: 769px) {
-//         padding-top: 640px;
-//     }
-// `
 
 export default StyledTopImage
