@@ -35,7 +35,8 @@ function BlogDetail({ data }) {
         renderNode: {
             [BLOCKS.EMBEDDED_ASSET]: (node) => (
                 <img
-                    src={`${node.data.target.fields.file["en-US"].url}?fm=webp&fit=fill&w=1100&h=825`}
+                    // src={`${node.data.target.fields.file["en-US"].url}?fm=webp&fit=fill&w=1100&h=825`}
+                    src={`${node.data.target.fields.file["en-US"].url}?fm=webp&fit=fill&w=1100`}
                     alt={node.data.target.fields.title["en-US"]}
                 />
             )
