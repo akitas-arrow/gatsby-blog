@@ -39,7 +39,7 @@ function Footer() {
                         CONTACT
                     </Title>
                     <Text>お仕事のご相談はこちらのアドレスへお問い合わせ下さい。</Text>
-                    <Text>hogehogehoge@hoge.com</Text>
+                    <Text>kasaisfamily@gmail.com</Text>
                 </FooterSection>
             </Container>
         </Wrapper>

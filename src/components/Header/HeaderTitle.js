@@ -1,11 +1,26 @@
 import React from 'react'
 import styled from "styled-components"
 import { Link } from "gatsby"
+// import { graphql, useStaticQuery} from 'gatsby'
+// import Img from "gatsby-image"
 
 function HeaderTitle() {
+    // const data = useStaticQuery(graphql`
+    //     query {
+    //         allContentfulTag {
+    //             edges {
+    //                 node {
+    //                     name
+    //                     slug
+    //                 }
+    //             }
+    //         }
+    //     }
+    // `)
+
     return (
             <Title as={Link} to="/">
-                My Blog
+                COCOLO
             </Title>
     )
 }

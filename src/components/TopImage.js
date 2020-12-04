@@ -10,7 +10,7 @@ const TopImage = ({ className }) => {
             query {
                 desktop: file(relativePath: { eq: "top.jpg" }) {
                     childImageSharp {
-                        fluid(quality: 90, maxWidth: 1700) {
+                        fluid(quality: 90, maxWidth: 1920) {
                             ...GatsbyImageSharpFluid_withWebp
                         }
                     }
@@ -28,24 +28,26 @@ const TopImage = ({ className }) => {
             fluid={imageData}
             backgroundColor={`#040e18`}
         >
-            <Content></Content>
+            {/* <Content></Content> */}
         </BackgroundImage>
     )
 }
 
 const StyledTopImage = styled(TopImage)`
     width: 100%;
-    height: auto;
-    background-position: center;
+    /* height: auto; */
+    background-repeat: no-repeat;
+    background-position: bottom center;
     background-size: cover;
+    background-attachment: fixed;
 `
 
-const Content = styled.div`
-    width: 100%;
-    padding-top: 70%;
-    @media (min-width: 769px) {
-        padding-top: 640px;
-    }
-`
+// const Content = styled.div`
+//     width: 100%;
+//     padding-top: 70%;
+//     @media (min-width: 769px) {
+//         padding-top: 640px;
+//     }
+// `
 
 export default StyledTopImage
