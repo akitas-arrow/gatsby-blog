@@ -6,7 +6,7 @@ import Tag from "./Tag"
 function BlogItem({ title, date, url, tags, link, alt}) {
     return (
         <Container>
-            <ImageContainer>
+            <ImageContainer to={`/${link}`}>
                 <img 
                     src={`${url}?fm=webp&fit=fill&w=768&h=576`}
                     alt={alt}
@@ -51,7 +51,8 @@ const Container = styled.div`
     }
 `
 
-const ImageContainer = styled.div`
+const ImageContainer = styled(Link)`
+    display: block;
     width: 100%;
     @media (min-width: 769px) {
         width: calc((100% - 40px) * 0.4);
