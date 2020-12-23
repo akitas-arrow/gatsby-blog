@@ -1,6 +1,7 @@
 import React from "react"
 import { graphql, useStaticQuery } from 'gatsby'
 import Layout from "../components/Layout"
+import SEO from "../components/seo"
 import StyledTopImage from "../components/TopImage"
 import ContentsWrapper from "../components/ContentsWrapper"
 import BlogItem from "../components/BlogItem"
@@ -39,6 +40,7 @@ const Home = () => {
 
   return (
     <Layout>
+      <SEO />
       <StyledTopImage />
       <ContentsWrapper>
         {

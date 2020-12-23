@@ -2,10 +2,15 @@ import React from 'react'
 import Layout from '../components/Layout'
 import ContentsWrapper from '../components/ContentsWrapper'
 import styled from 'styled-components'
+import SEO from '../components/seo'
 
 function About() {
     return (
         <Layout>
+            <SEO
+                title="aboutページ"
+                description="これはCOCOLOのaboutページです。"
+            />
             <ContentsWrapper>
                 <Heading>
                     <TitleBlock>

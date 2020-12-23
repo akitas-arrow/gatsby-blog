@@ -1,9 +1,13 @@
-
-const config = require('./config/site');
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+// const config = require('./config/site');
 
 module.exports = {
   siteMetadata: {
-    ...config
+    // ...config
+    title: "COCOLO",
+    description: "起業や独立をしたい社会人にむけたWebメディアです。"
   },
   plugins: [
     `gatsby-plugin-playground`,
@@ -47,23 +51,23 @@ module.exports = {
       resolve: `gatsby-source-contentful`,
       options: {
         spaceId: `yaywl2w84ji2`,
-        accessToken: `B0yT7rdbLUXPsjbDOo_AiBSkBgAFSDnJxtpBxRsDJKo`,
+        accessToken: process.env.ACCESS_TOKEN,
       },
     },
     'gatsby-plugin-sitemap',
-    {
-      resolve: 'gatsby-plugin-manifest',
-      options: {
-        name: config.title,
-        short_name: config.shortName,
-        description: config.description,
-        start_url: config.pathPrefix,
-        background_color: config.backgroundColor,
-        theme_color: config.themeColor,
-        display: 'standalone',
-        icon: config.favicon,
-      },
-    },
+    // {
+    //   resolve: 'gatsby-plugin-manifest',
+    //   options: {
+    //     name: config.title,
+    //     short_name: config.shortName,
+    //     description: config.description,
+    //     start_url: config.pathPrefix,
+    //     background_color: config.backgroundColor,
+    //     theme_color: config.themeColor,
+    //     display: 'standalone',
+    //     icon: config.favicon,
+    //   },
+    // },
     'gatsby-plugin-offline'
   ],
 }
