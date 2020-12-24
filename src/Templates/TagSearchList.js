@@ -4,6 +4,7 @@ import Layout from '../components/Layout'
 import ContentsWrapper from '../components/ContentsWrapper'
 import BlogItem from '../components/BlogItem'
 import styled from 'styled-components'
+import SEO from '../components/seo'
 
 export const query = graphql`
     query ($slug: String!){
@@ -47,6 +48,9 @@ export const query = graphql`
 function TagSearchList ({ data }) {
     return (
         <Layout>
+            <SEO 
+                title={data.contentfulTag.name}
+            />
             <ContentsWrapper>
                 <Heading>
                     <Title>

@@ -5,6 +5,7 @@ import Layout from "../components/Layout"
 import ContentsWrapper from "../components/ContentsWrapper"
 import BlogItem from "../components/BlogItem"
 import PageNation from "../components/PageNation"
+import SEO from "../components/seo"
 
 export const query = graphql`
 query ($skip: Int!, $limit: Int!) {
@@ -40,6 +41,9 @@ query ($skip: Int!, $limit: Int!) {
 function blog({ data, pageContext }) {
     return (
         <Layout>
+            <SEO 
+                title={`ブログ一覧 part-${pageContext.humanPageNumber}`}
+            />
             <ContentsWrapper>
                 <Heading>
                     <Title>

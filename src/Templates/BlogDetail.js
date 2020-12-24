@@ -6,6 +6,7 @@ import Layout from '../components/Layout'
 import ContentsWrapper from '../components/ContentsWrapper'
 import { BLOCKS } from "@contentful/rich-text-types"
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
+import SEO from '../components/seo'
 
 export const query = graphql`
     query($slug: String!) {
@@ -35,7 +36,6 @@ function BlogDetail({ data }) {
         renderNode: {
             [BLOCKS.EMBEDDED_ASSET]: (node) => (
                 <img
-                    // src={`${node.data.target.fields.file["en-US"].url}?fm=webp&fit=fill&w=1100&h=825`}
                     src={`${node.data.target.fields.file["en-US"].url}?fm=webp&fit=fill&w=1100`}
                     alt={node.data.target.fields.title["en-US"]}
                 />
@@ -45,6 +45,9 @@ function BlogDetail({ data }) {
 
     return (
         <Layout>
+            <SEO 
+                title={data.contentfulBlogPost.title}
+            />
             <ContentsWrapper>
                 <Heading>
                     <TitleBlock>

@@ -8,8 +8,7 @@ function About() {
     return (
         <Layout>
             <SEO
-                title="aboutページ"
-                description="これはCOCOLOのaboutページです。"
+                title="COCOLOについて"
             />
             <ContentsWrapper>
                 <Heading>
