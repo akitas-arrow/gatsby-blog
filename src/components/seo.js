@@ -24,6 +24,7 @@ function SEO({title, description}) {
         <Helmet>
             <html lang="ja" />
             <title>{seo.title}</title>
+            <meta charset="utf-8" />
             <meta name="description" content={seo.description} />
         </Helmet>
     )
