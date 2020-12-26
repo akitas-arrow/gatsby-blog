@@ -1,9 +1,8 @@
-const { favicon } = require('./config/site');
+const dotenv = require("dotenv")
 
-require('dotenv').config({
-  path: `.env.${process.env.NODE_ENV}`,
-});
-// const config = require('./config/site');
+if (process.env.ENVIRONMENT !== "production") {
+  dotenv.config()
+}
 
 module.exports = {
   siteMetadata: {
@@ -52,8 +51,8 @@ module.exports = {
     {
       resolve: `gatsby-source-contentful`,
       options: {
-        spaceId: `yaywl2w84ji2`,
-        accessToken: process.env.ACCESS_TOKEN,
+        spaceId: process.env.spaceId,
+        accessToken: process.env.accessToken,
       },
     },
     'gatsby-plugin-sitemap',
