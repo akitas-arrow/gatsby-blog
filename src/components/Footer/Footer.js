@@ -38,7 +38,7 @@ function Footer() {
                     <Title>
                         CONTACT
                     </Title>
-                    <Text>お仕事のご相談はこちらのアドレスへお問い合わせ下さい。</Text>
+                    <Text>COCOLOに興味がある！話してみたい！という方は、こちらのアドレスへお問い合わせ下さい。</Text>
                     <Text>kasaisfamily@gmail.com</Text>
                 </FooterSection>
             </Container>
