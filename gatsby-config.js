@@ -6,9 +6,9 @@ if (process.env.ENVIRONMENT !== "production") {
 
 module.exports = {
   siteMetadata: {
-    // ...config
     title: "COCOLO",
-    description: "起業や独立をしたい社会人にむけたWebメディアです。"
+    description: "起業や独立をしたい社会人にむけたWebメディアです。",
+    siteUrl: `https://cocolo.netlify.app/`,
   },
   plugins: [
     `gatsby-plugin-playground`,
