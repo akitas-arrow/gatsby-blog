@@ -55,21 +55,20 @@ module.exports = {
         accessToken: process.env.accessToken,
       },
     },
-    // 'gatsby-plugin-sitemap',
-    // {
-    //   resolve: 'gatsby-plugin-manifest',
-    //   options: {
-    //     // name: config.title,
-    //     // short_name: config.shortName,
-    //     // description: config.description,
-    //     // start_url: config.pathPrefix,
-    //     // background_color: config.backgroundColor,
-    //     // theme_color: config.themeColor,
-    //     // display: 'standalone',
-    //     // icon: config.favicon,
-    //     icon: `src/images/favicon.png`
-    //   },
-    // },
+    'gatsby-plugin-sitemap',
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        name: 'COCOLO',
+        short_name: 'COCOLO',
+        description: "起業や独立をしたい社会人にむけたWebメディアです。",
+        start_url: '/',
+        background_color: '#e9eff4',
+        theme_color: '#CED4BE',
+        display: 'standalone',
+        icon: `src/images/favicon.png`
+      },
+    },
     'gatsby-plugin-offline'
   ],
 }
