@@ -7,7 +7,7 @@ if (process.env.ENVIRONMENT !== "production") {
 module.exports = {
   siteMetadata: {
     title: "COCOLO",
-    description: "起業や独立をしたい社会人にむけたWebメディアです。",
+    description: "起業や独立をしたい社会人にむけたWebメディア",
     siteUrl: `https://cocolo.netlify.app/`,
   },
   plugins: [
