@@ -1,10 +1,25 @@
 import React from 'react'
+import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import ContentsWrapper from '../components/ContentsWrapper'
 import styled from 'styled-components'
 import SEO from '../components/seo'
+import Img from "gatsby-image"
 
-function About() {
+export const data = graphql`
+    query {
+        file(relativePath: {eq: "about.jpg"}) {
+            childImageSharp {
+                fluid(maxWidth: 800) {
+                    ...GatsbyImageSharpFluid
+                }
+            }
+        }
+    }
+`
+
+function About({ data }) {
+
     return (
         <Layout>
             <SEO
@@ -17,7 +32,9 @@ function About() {
                                 ABOUT
                             </Title>
                         </TitleBlock>
-                    <ImageBlock></ImageBlock>
+                    <ImageBlock>
+                        <Img fluid={data.file.childImageSharp.fluid} alt="笠井心"/>
+                    </ImageBlock>
                 </Heading>
                 <TextBlock>
                     <NameBlock>
@@ -73,10 +90,10 @@ const Title = styled.h3`
 const ImageBlock = styled.div`
     background-color: white;
     width: 100%;
-    padding-top: 75%;
+    /* padding-top: 75%; */
     @media (min-width: 769px) {
         width: calc((100% - 40px) / 2);
-        padding-top: 35%;
+        /* padding-top: 35%; */
     }
 `
 

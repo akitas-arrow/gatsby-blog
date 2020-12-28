@@ -17,7 +17,7 @@ const TopImage = ({ className }) => {
                 }
                 desktopImage: file(relativePath: { eq: "top.jpg" }) {
                     childImageSharp {
-                        fluid(quality: 100, maxWidth: 4160) {
+                        fluid(maxWidth: 4160, quality: 100) {
                             ...GatsbyImageSharpFluid_withWebp
                         }
                     }
