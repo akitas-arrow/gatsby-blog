@@ -8,17 +8,22 @@ const query = graphql`
             siteMetadata {
                 defaultTitle: title
                 defaultDescription: description
+                defaultSiteUrl: siteUrl
+                defaultImage: image
             }
         }
     }
 `
 
-function SEO({title, description}) {
+function SEO({title, description, url, image}) {
     const { site } = useStaticQuery(query)
-    const { defaultTitle, defaultDescription } = site.siteMetadata
+    const { defaultTitle, defaultDescription, defaultSiteUrl, defaultImage } = site.siteMetadata
+    // const { pathname } = useLocation()
     const seo = {
         title: title ? `${title} | ${defaultTitle}` : defaultTitle,
         description: description || defaultDescription,
+        siteUrl: `${defaultSiteUrl}${url || defaultSiteUrl}`,
+        image: `${defaultSiteUrl}${image || defaultImage}`,
     }
     return (
         <Helmet>
@@ -26,6 +31,8 @@ function SEO({title, description}) {
             <title>{seo.title}</title>
             <meta charset="utf-8" />
             <meta name="description" content={seo.description} />
+            <meta property="og:url" content={seo.siteUrl} />
+            <meta property="og:image" content={seo.image} />
         </Helmet>
     )
 }

@@ -41,6 +41,7 @@ export const query = graphql`
         }
         contentfulTag (slug:{eq: $ slug}) {
             name
+            slug
         }
     }
 `
@@ -50,6 +51,7 @@ function TagSearchList ({ data }) {
         <Layout>
             <SEO 
                 title={data.contentfulTag.name}
+                url={`/tags/${data.contentfulTag.slug}`}
             />
             <ContentsWrapper>
                 <Heading>

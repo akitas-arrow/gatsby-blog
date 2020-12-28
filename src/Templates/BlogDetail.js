@@ -11,6 +11,7 @@ import SEO from '../components/seo'
 export const query = graphql`
     query($slug: String!) {
         contentfulBlogPost(slug: {eq: $slug}){
+            slug
             title
             createdDate(formatString: "YYYY/MM/DD")
             thumbnail {
@@ -47,6 +48,7 @@ function BlogDetail({ data }) {
         <Layout>
             <SEO 
                 title={data.contentfulBlogPost.title}
+                url={`/blog/${data.contentfulBlogPost.slug}`}
             />
             <ContentsWrapper>
                 <Heading>

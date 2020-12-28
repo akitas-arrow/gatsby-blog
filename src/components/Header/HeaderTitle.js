@@ -25,6 +25,7 @@ function HeaderTitle() {
 const TitleBlock = styled.div`
     display: flex;
     text-decoration: none;
+    z-index: 3;
 `
 
 const TitleImg = styled.img`
@@ -37,7 +38,6 @@ const TitleImg = styled.img`
 `
 const Title = styled.div`
     display: flex;
-    z-index: 3;
     padding: 0 8px;
     font-size: 24px;
     line-height: 80px;
