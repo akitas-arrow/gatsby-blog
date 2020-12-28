@@ -39,6 +39,7 @@ const Wrapper = styled.div`
     display: flex;
     height: 80px;
     justify-content: space-between;
+    /* background-color: rgba(233,239,244,0.6); */
 `
 
 const Toggle = styled.div`

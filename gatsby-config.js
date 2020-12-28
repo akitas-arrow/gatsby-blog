@@ -66,7 +66,7 @@ module.exports = {
         background_color: '#e9eff4',
         theme_color: '#CED4BE',
         display: 'standalone',
-        icon: `src/images/favicon.png`
+        icon: `src/images/cocolo-icon.png`
       },
     },
     'gatsby-plugin-offline'

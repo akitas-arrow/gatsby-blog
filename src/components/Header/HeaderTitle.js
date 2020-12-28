@@ -1,33 +1,43 @@
 import React from 'react'
 import styled from "styled-components"
 import { Link } from "gatsby"
-// import { graphql, useStaticQuery} from 'gatsby'
-// import Img from "gatsby-image"
+import { graphql, useStaticQuery} from 'gatsby'
 
 function HeaderTitle() {
-    // const data = useStaticQuery(graphql`
-    //     query {
-    //         allContentfulTag {
-    //             edges {
-    //                 node {
-    //                     name
-    //                     slug
-    //                 }
-    //             }
-    //         }
-    //     }
-    // `)
+    const data = useStaticQuery(graphql`
+        query {
+            file(relativePath: {eq: "cocolo-icon.svg"}){
+                publicURL
+            }
+        }
+    `)
 
     return (
-            <Title as={Link} to="/">
+        <TitleBlock as={Link} to="/">
+            <TitleImg src={data.file.publicURL} alt='cocolo'/>
+            <Title>
                 COCOLO
             </Title>
+        </TitleBlock>
     )
 }
 
-const Title = styled.div`
-    z-index: 3;
+const TitleBlock = styled.div`
+    display: flex;
     text-decoration: none;
+`
+
+const TitleImg = styled.img`
+    margin: 24px 0;
+    height: 32px;
+    @media (min-width: 769px) {
+        margin: 16px 0;
+        height: 48px;
+    }
+`
+const Title = styled.div`
+    display: flex;
+    z-index: 3;
     padding: 0 8px;
     font-size: 24px;
     line-height: 80px;

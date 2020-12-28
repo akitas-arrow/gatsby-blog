@@ -23,6 +23,9 @@ const NavItem = styled(Link)`
         font-size: 24px;
         margin-right: 32px;
     }
+    :hover {
+        color: #395370;
+    }
 `
 
 export default NavLinks

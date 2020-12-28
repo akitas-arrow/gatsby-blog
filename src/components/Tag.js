@@ -21,7 +21,7 @@ const TagButton = styled(Link)`
     margin-right: 16px;
     margin-bottom: 16px;
     :hover {
-        opacity: 0.7;
+        background-color: #395370;
     }
 `
 

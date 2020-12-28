@@ -76,7 +76,8 @@ const TextBlockTop = styled.div`
         padding: 0;
     }
     :hover {
-        opacity: 0.7;
+        color: #395370;
+        /* text-decoration: underline; */
     }
 `
 
@@ -93,6 +94,11 @@ const Title = styled.h4`
     font-weight: medium;
     @media (min-width: 769px) {
         font-size: 20px;
+    }
+    :hover {
+        /* opacity: 0.7; */
+        color: #395370;
+        text-decoration: underline;
     }
 `
 
