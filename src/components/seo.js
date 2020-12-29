@@ -2,6 +2,7 @@ import React from 'react'
 import { Helmet } from "react-helmet"
 import { graphql, useStaticQuery } from "gatsby"
 import { useLocation } from "@reach/router"
+import ogp_img from "../images/top.jpg"
 
 const query = graphql`
     query {
@@ -18,12 +19,14 @@ const query = graphql`
 
 function SEO({title, description, image, article}) {
     const { site } = useStaticQuery(query)
-    const { defaultTitle, defaultDescription, defaultSiteUrl, defaultImage } = site.siteMetadata
+    const { defaultTitle, defaultDescription, defaultSiteUrl } = site.siteMetadata
+    // const { defaultTitle, defaultDescription, defaultSiteUrl, defaultImage } = site.siteMetadata
     const { pathname } = useLocation()
     const seo = {
         title: title ? `${title} | ${defaultTitle}` : defaultTitle,
         description: description || defaultDescription,
-        image: `${defaultSiteUrl}${image || defaultImage}`,
+        image: `${defaultSiteUrl}${image || ogp_img}`,
+        // image: `${defaultSiteUrl}${image || defaultImage}`,
         url: `${defaultSiteUrl}${pathname}`,
     }
     return (
