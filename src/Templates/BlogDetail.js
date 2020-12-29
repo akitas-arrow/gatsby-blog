@@ -48,7 +48,7 @@ function BlogDetail({ data }) {
         <Layout>
             <SEO 
                 title={data.contentfulBlogPost.title}
-                url={`/blog/${data.contentfulBlogPost.slug}`}
+                article={true}
             />
             <ContentsWrapper>
                 <Heading>

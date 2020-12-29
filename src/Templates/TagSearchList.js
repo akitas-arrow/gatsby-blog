@@ -51,7 +51,6 @@ function TagSearchList ({ data }) {
         <Layout>
             <SEO 
                 title={data.contentfulTag.name}
-                url={`/tags/${data.contentfulTag.slug}`}
             />
             <ContentsWrapper>
                 <Heading>
