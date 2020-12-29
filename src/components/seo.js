@@ -3,20 +3,7 @@ import { Helmet } from "react-helmet"
 import { graphql, useStaticQuery } from "gatsby"
 import { useLocation } from "@reach/router"
 import ogp_img from "../images/top.jpg"
-
-const query = graphql`
-    query {
-        site {
-            siteMetadata {
-                defaultTitle: title
-                defaultDescription: description
-                defaultSiteUrl: siteUrl
-                defaultImage: image
-            }
-        }
-    }
-`
-
+import PropTypes from "prop-types"
 function SEO({title, description, image, article}) {
     const { site } = useStaticQuery(query)
     const { defaultTitle, defaultDescription, defaultSiteUrl } = site.siteMetadata
@@ -56,3 +43,23 @@ function SEO({title, description, image, article}) {
 }
 
 export default SEO
+
+const query = graphql`
+    query {
+        site {
+            siteMetadata {
+                defaultTitle: title
+                defaultDescription: description
+                defaultSiteUrl: siteUrl
+                defaultImage: image
+            }
+        }
+    }
+`
+
+SEO.propTypes = {
+    title: PropTypes.string,
+    description: PropTypes.string,
+    image: PropTypes.string,
+    article: PropTypes.bool,
+}
