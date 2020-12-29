@@ -2,7 +2,8 @@ import React from 'react'
 import { Helmet } from "react-helmet"
 import { graphql, useStaticQuery } from "gatsby"
 import { useLocation } from "@reach/router"
-import ogp_img from "../images/top.jpg"
+import ogp_img from "../images/favicon.png"
+// import ogp_img from "../images/top.jpg"
 import PropTypes from "prop-types"
 function SEO({title, description, image, article}) {
     const { site } = useStaticQuery(query)
