@@ -9,7 +9,7 @@ module.exports = {
     title: "COCOLO",
     description: "起業や独立をしたい社会人にむけたWebメディア",
     siteUrl: `https://cocolo.netlify.app/`,
-    image: "src/images/top.jpg"
+    image: "/src/images/top.jpg"
   },
   plugins: [
     `gatsby-plugin-playground`,
