@@ -7,9 +7,11 @@ if (process.env.ENVIRONMENT !== "production") {
 module.exports = {
   siteMetadata: {
     title: "COCOLO",
+    titleTemplate: "%s - Blog",
     description: "起業や独立をしたい社会人にむけたWebメディア",
-    siteUrl: `https://cocolo.netlify.app/`,
-    image: "/src/images/favicon.png"
+    siteUrl: `https://cocolo.netlify.app`,
+    url: `https://cocolo.netlify.app`,
+    image: "/images/thumbnail.jpg"
   },
   plugins: [
     `gatsby-plugin-playground`,
@@ -63,7 +65,7 @@ module.exports = {
         name: 'COCOLO',
         short_name: 'COCOLO',
         description: "起業や独立をしたい社会人にむけたWebメディアです。",
-        start_url: '/',
+        start_url: "/",
         background_color: '#e9eff4',
         theme_color: '#CED4BE',
         display: 'standalone',
