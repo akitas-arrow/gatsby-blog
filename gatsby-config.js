@@ -7,7 +7,7 @@ if (process.env.ENVIRONMENT !== "production") {
 module.exports = {
   siteMetadata: {
     title: "COCOLO",
-    titleTemplate: "%s - Blog",
+    titleTemplate: "%s - COCOLO's Blog",
     description: "起業や独立をしたい社会人にむけたWebメディア",
     siteUrl: `https://cocolo.netlify.app`,
     url: `https://cocolo.netlify.app`,

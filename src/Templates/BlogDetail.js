@@ -49,6 +49,7 @@ function BlogDetail({ data }) {
             <SEO 
                 title={data.contentfulBlogPost.title}
                 article={true}
+                image={data.contentfulBlogPost.thumbnail.file.url}
             />
             <ContentsWrapper>
                 <Heading>
