@@ -41,7 +41,6 @@ export const query = graphql`
         }
         contentfulTag (slug:{eq: $ slug}) {
             name
-            slug
         }
     }
 `

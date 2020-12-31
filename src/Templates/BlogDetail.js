@@ -11,7 +11,6 @@ import SEO from '../components/seo'
 export const query = graphql`
     query($slug: String!) {
         contentfulBlogPost(slug: {eq: $slug}){
-            slug
             title
             createdDate(formatString: "YYYY/MM/DD")
             thumbnail {
@@ -135,6 +134,13 @@ const TextBlock = styled.div`
     @media (min-width: 769px) {
         margin: 0 auto;
         max-width: 800px;
+    }
+    & h1 {
+        padding: 0.5em 0;
+        /* border-top: solid 3px #395370; */
+        border-bottom: solid 2px #395370;
+        margin-top: 2em;
+        margin-bottom: 1em;
     }
 `
 const LinkButtonContainer = styled.div`

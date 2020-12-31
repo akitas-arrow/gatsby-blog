@@ -13,7 +13,6 @@ function SEO({title, description, image, article}) {
         titleTemplate,
         defaultDescription,
         siteUrl,
-        // defaultImage,
         twitterUsername,
     } = site.siteMetadata
 
