@@ -11,6 +11,7 @@ module.exports = {
     description: "起業や独立をしたい社会人にむけたWebメディア",
     siteUrl: `https://cocolo.netlify.app`,
     url: `https://cocolo.netlify.app`,
+    twitterUsername: "@AkitasAllow",
   },
   plugins: [
     `gatsby-plugin-playground`,
