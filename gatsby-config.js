@@ -14,6 +14,7 @@ module.exports = {
     twitterUsername: "@AkitasAllow",
   },
   plugins: [
+    `gatsby-plugin-react-helmet`,
     `gatsby-plugin-playground`,
     `gatsby-plugin-styled-components`,
     `gatsby-transformer-sharp`,
