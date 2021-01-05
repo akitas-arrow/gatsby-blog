@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet"
 import { graphql, useStaticQuery } from "gatsby"
 import { useLocation } from "@reach/router"
 import PropTypes from "prop-types"
-import defaultImage from '../images/top.jpg'
+import TopImage from '../images/top.jpg'
 function SEO({title, description, image, article}) {
     const { pathname } = useLocation()
     const { site } = useStaticQuery(query)
@@ -16,11 +16,13 @@ function SEO({title, description, image, article}) {
         twitterUsername,
     } = site.siteMetadata
 
+    const defaultImage = `${siteUrl}${TopImage}`
+
     const seo = {
         title: title || defaultTitle,
         description: description || defaultDescription,
         // image: `${siteUrl}${image || defaultImage}`,
-        image: image || `${siteUrl}${defaultImage}`,
+        image: image || defaultImage,
         url: `${siteUrl}${pathname}`,
     }
     return (
