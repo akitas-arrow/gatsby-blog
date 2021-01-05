@@ -18,6 +18,9 @@ export const query = graphql`
                 file {
                     url
                 }
+                resize(width: 1800) {
+                    src
+                }
             }
             body {
                 json
@@ -48,7 +51,7 @@ function BlogDetail({ data }) {
             <SEO 
                 title={data.contentfulBlogPost.title}
                 article={true}
-                image={data.contentfulBlogPost.thumbnail.file.url}
+                image={data.contentfulBlogPost.thumbnail.resize.src}
             />
             <ContentsWrapper>
                 <Heading>
