@@ -51,7 +51,7 @@ function BlogDetail({ data }) {
             <SEO 
                 title={data.contentfulBlogPost.title}
                 article={true}
-                image={data.contentfulBlogPost.thumbnail.resize.src}
+                image={`https:${data.contentfulBlogPost.thumbnail.resize.src}`}
             />
             <ContentsWrapper>
                 <Heading>
