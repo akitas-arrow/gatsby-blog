@@ -50,6 +50,7 @@ function TagSearchList ({ data }) {
         <Layout>
             <SEO 
                 title={data.contentfulTag.name}
+                article={true}
             />
             <ContentsWrapper>
                 <Heading>

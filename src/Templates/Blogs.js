@@ -43,6 +43,7 @@ function blog({ data, pageContext }) {
         <Layout>
             <SEO 
                 title={`ブログ一覧 part-${pageContext.humanPageNumber}`}
+                article={true}
             />
             <ContentsWrapper>
                 <Heading>

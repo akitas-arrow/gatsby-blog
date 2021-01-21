@@ -24,6 +24,7 @@ function About({ data }) {
         <Layout>
             <SEO
                 title="COCOLOについて"
+                article={true}
             />
             <ContentsWrapper>
                 <Heading>
