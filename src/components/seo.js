@@ -27,6 +27,7 @@ function SEO({title, description, image, article}) {
     }
     return (
         <Helmet title={seo.title} titleTemplate={titleTemplate}>
+            <meta name="google-site-verification" content="M1kZTwPG9ZrG-zy1Nmt4DhHBIUc0jsKyS2eDIEeaPI0" />
             <meta name="description" content={seo.description} />
             <meta name="image" content={seo.image} />
             {seo.url && <meta property="og:url" content={seo.url} />}
