@@ -50,6 +50,7 @@
     "styled-components": "^5.2.1"
   },
   "devDependencies": {
+    "gatsby-plugin-remove-trailing-slashes": "^3.0.0",
     "prettier": "2.1.2"
   },
   "repository": {
